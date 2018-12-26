@@ -8,12 +8,11 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
-    <!-- <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet"> -->
     <link href="https://fonts.googleapis.com/css?family=Pirata+One" rel="stylesheet">
-    <script src="assets/javascript/game.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+    
     <style>
         header {
-            /* font-family: 'Permanent Marker', cursive; */
             font-family: 'Pirata One', cursive;
         }
 
@@ -32,36 +31,37 @@
         </header>
         <div class="jumbotron row bg-white">
             <div class="col-md-6 text-center border" style="height: 400px;">
-                <img src="assets/images/gallows.jpg" alt="Silouhette of the gallows" sytle="width: 50px;">
-            </div>
-            <div class="col-md-6 text-center border" style="height: 400px;">
-                <p>
-                    Press any key to get started!
-                </p>
-                <div class="row" id="winTotal">
-                    <div class="col-md-12 text-center">
+                    <img src="assets/images/gallows.jpg" alt="Silouhette of the gallows" sytle="width: 50px;">
+                </div>
+                <div class="col-md-6 text-center border" style="height: 400px;">
                         <p>
-                            Wins:
+                            Press any key to get started!
                         </p>
+                        <div class="row" id="winTotal">
+                            <div class="col-md-12 text-center">
+                                <p>
+                                    Wins:
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 text-center" id="currentWord">
+                                <p>
+                                    Current Word:
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-12 text-center" id="currentWord">
-                        <p>
-                            Current Word:
-                        </p>
-                    </div>
-                </div>
+                
             </div>
-        </div>
-
-    </div>
-
-
-
-
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            
+            
+            
+            
+            <script type="text/javascript" src="assets/javascript/game.js"></script>
+            
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
         crossorigin="anonymous"></script>

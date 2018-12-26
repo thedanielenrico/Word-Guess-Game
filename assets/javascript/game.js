@@ -1,18 +1,19 @@
 
+// Random word list
+var wordList = ['ocean', 'pirate', "beach", "parrot", "ship"];
+var word = wordList[Math.floor(Math.random() * wordList.length)];
 
-// Pick a random word
-var wordList = ['pirate', 'ocean', 'ship'];
-var randomWord = wordList[Math.floor(Math.random() * wordList.length)];
-// Answer Array i.e. '_''_'
+
 var answerArray = [];
-for (var i = 0; i < wordList.length; i++) {
-    answerArray[i] = '_';
+for (var i = 0; i < word.length; i++) {
+    answerArray[i] = "_ ";
 }
-var remainingLetters = wordList.length;
-console.log(remainingLetters);
+// Show letter tiles
+// var remainingLetters = word.length;
+var currentWord = document.getElementById("currentWord");
+var lettersLeft = document.createElement("p");
+lettersLeft.textContent = answerArray;
+currentWord.appendChild(lettersLeft);
+console.log(word);
 
 
-
-var wordPara = document.createElement('p');
-var wordToGuess = document.createTextNode("answerArray");
-wordPara.appendChild(wordToGuess);
