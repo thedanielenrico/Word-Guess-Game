@@ -2,12 +2,13 @@
 // Random word list
 var wordList = ['ocean', 'pirate', "beach", "parrot", "ship"];
 var word = wordList[Math.floor(Math.random() * wordList.length)];
-var letterChoices = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+var rightLetter = [];
+var wrongLetter = [];
+var answerArray = [];
 
 // Show letter tiles
-var answerArray = [];
 for (var i = 0; i < word.length; i++) {
-    answerArray[i] = "_ ";
+    answerArray.push("_");
 }
 var remainingLetters = word.length;
 
@@ -17,14 +18,18 @@ var usedLetters = document.getElementById("usedLetters");
 var letterSpaces = document.createElement("p");
 letterSpaces.textContent = answerArray;
 currentWord.appendChild(letterSpaces);
+
 document.onkeyup = function (event) {
-    var keyPressed = event.key;
-    letterSpaces.textContent = answerArray;
-    if (word.includes(keyPressed)) {
-        letterSpaces.textContent = answerArray + keyPressed;
-    } else {
-        usedLetters.textContent = keyPressed;
-    }
+    var guess = event.key;
+    // letterSpaces.textContent = answerArray;
+        if (word.indexOf(guess) > -1) {
+            rightLetter.push(guess);
+            answerArray[word.indexOf(guess)] = guess;
+            letterSpaces.textContent = answerArray.join(' ');
+        } else {
+            wrongLetter.push(guess);
+            wrongLetters.textContent = wrongLetter;
+        }
 }
 
 // if (key presssed is equal to a letter in the word) {
