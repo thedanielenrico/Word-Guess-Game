@@ -10,11 +10,10 @@ for (var i = 0; i < word.length; i++) {
     answerArray[i] = "_ ";
 }
 var remainingLetters = word.length;
-for (var j = 0; j < remainingLetters.length; j++) {
 
-}
-
+console.log(word);
 var currentWord = document.getElementById("currentWord");
+var usedLetters = document.getElementById("usedLetters");
 var letterSpaces = document.createElement("p");
 letterSpaces.textContent = answerArray;
 currentWord.appendChild(letterSpaces);
@@ -23,6 +22,8 @@ document.onkeyup = function (event) {
     letterSpaces.textContent = answerArray;
     if (word.includes(keyPressed)) {
         letterSpaces.textContent = answerArray + keyPressed;
+    } else {
+        usedLetters.textContent = keyPressed;
     }
 }
 
