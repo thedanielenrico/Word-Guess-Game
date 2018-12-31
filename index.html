@@ -12,6 +12,11 @@
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
 
     <style>
+        body {
+            background-image: url('assets/images/ocean-pic.jpeg');
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
         header {
             font-family: 'Pirata One', cursive;
         }
@@ -25,7 +30,7 @@
 <body>
     <div class="container">
         <header>
-            <h1 class="text-center">
+            <h1 class="text-center text-white">
                 HANGMAN
             </h1>
         </header>
@@ -34,9 +39,13 @@
                 <img src="assets/images/gallows.jpg" alt="Silouhette of the gallows" sytle="width: 50px;">
             </div>
             <div class="col-md-6 text-center border" style="height: 400px;">
-                <p>
-                    Press any key to get started!
-                </p>
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <p>
+                            Press any key to get started!
+                        </p>
+                    </div>
+                </div>
                 <div class="row">
                     <div class="col-md-12 text-center">
                         <p id="winTotal">
@@ -50,16 +59,19 @@
                             Current Word:
                         </p>
                     </div>
-                    <div class="row">
-                        <div class="col-md-12 text-center" id="wrongLetters">
-                            <p>
-                                hello world
-                            </p>
-                        </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <p id="guessesLeft">
+                            Guesses Left:
+                        </p>
+                        <p id="wrongLetters">
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
     </div>
 
