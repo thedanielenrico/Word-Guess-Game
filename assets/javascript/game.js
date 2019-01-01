@@ -7,7 +7,7 @@ var rightLetter = [];
 var wrongLetter = [];
 var answerArray = [];
 var wins = 1;
-var guessesTotal = 13;
+var guessesTotal = 11;
 // var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']; 
 var guessesLeft = document.getElementById("guessesLeft");
 
@@ -20,14 +20,13 @@ for (var i = 0; i < word.length; i++) {
 // }
 
 var remainingLetters = word.length;
-
-
-console.log(word);
 var currentWord = document.getElementById("currentWord");
 var usedLetters = document.getElementById("usedLetters");
 var letterSpaces = document.createElement("p");
 letterSpaces.textContent = answerArray.join(" ");
 currentWord.appendChild(letterSpaces);
+console.log(answerArray);
+
 
 document.onkeyup = function (event) {
     var guess = event.key;
@@ -37,18 +36,18 @@ document.onkeyup = function (event) {
         wordArray[wordArray.indexOf(guess)] = '';
         letterSpaces.textContent = answerArray.join(' ');
     }
-
     if (rightLetter.length === word.length) {
         var winTotal = document.getElementById("winTotal");
         winTotal.textContent = ("Wins: " + wins++);
-        // alert("You win!");
+        // if word is right, restart with new word
     }
     if (!word.includes(guess)) {
         wrongLetter.push(guess);
-        wrongLetters.textContent = wrongLetter.join("-");
+        wrongLetters.textContent = wrongLetter.join(" ");
         guessesLeft.textContent = ("Guesses Left: " + guessesTotal--);
+        // don't count letters that have already been pressed
         if (guessesTotal <= 0) {
-            alert("Game over");
+            // stop game and restart
         }
     }
     if (!word.includes(guess) || rightLetter.length === word.length) {
