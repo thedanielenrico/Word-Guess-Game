@@ -1,64 +1,78 @@
-
+// =================================================================
 // Global variables
+// =================================================================
 var wordList = ['ocean', 'pirate', "beach", "parrot", "ship"];
 var word = wordList[Math.floor(Math.random() * wordList.length)];
-var wordArray = word.split('');
+var wordArray = "";
 var rightLetter = [];
 var wrongLetter = [];
 var answerArray = [];
-var wins = 1;
+var wins = 0;
 var guessesTotal = 11;
-// var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']; 
 var guessesLeft = document.getElementById("guessesLeft");
-
-// Show letter tiles
-for (var i = 0; i < word.length; i++) {
-    answerArray.push("_");
+var regex = /[a-zA-Z]/;
+var currentWord = "";
+var usedLetters = "";
+var letterSpaces = "";
+var oldWords = [];
+// =================================================================
+// Game initialize
+// =================================================================
+function gameInit() {
+    word = wordList[Math.floor(Math.random() * wordList.length)];
+    wordArray = word.split('');
+    rightLetter = [];
+    wrongLetter = [];
+    answerArray = [];
+    guessesTotal = 11;
+    remainingLetters = word.length;
+    currentWord = "";
+    usedLetters = "";
+    letterSpaces = "";
+    oldWords;
+    for (var i = 0; i < word.length; i++) {
+        answerArray.push("_");
+    }
+    document.getElementById("currentWord").textContent = answerArray.join(" ");
+    document.getElementById("winTotal").textContent = wins;
+    document.getElementById("guessesLeft").textContent = guessesTotal;
+    document.getElementById("wrongLetters").textContent = "";
+    document.getElementById("oldWords").textContent = oldWords;
 }
-// for (var j = 0; j < alphabet.length; j++) {
-//     var allowedLetters = alphabet[i];
-// }
-
-var remainingLetters = word.length;
-var currentWord = document.getElementById("currentWord");
-var usedLetters = document.getElementById("usedLetters");
-var letterSpaces = document.createElement("p");
-letterSpaces.textContent = answerArray.join(" ");
-currentWord.appendChild(letterSpaces);
-console.log(answerArray);
-
-
+// =================================================================
+// Game events
+// =================================================================
+document.body.onload = gameInit();
 document.onkeyup = function (event) {
     var guess = event.key;
-    while (wordArray.indexOf(guess) != -1) {
-        rightLetter.push(guess);
-        answerArray[wordArray.indexOf(guess)] = guess;
-        wordArray[wordArray.indexOf(guess)] = '';
-        letterSpaces.textContent = answerArray.join(' ');
-    }
-    if (rightLetter.length === word.length) {
-        var winTotal = document.getElementById("winTotal");
-        winTotal.textContent = ("Wins: " + wins++);
-        // if word is right, restart with new word
-    }
-    if (!word.includes(guess)) {
-        wrongLetter.push(guess);
-        wrongLetters.textContent = wrongLetter.join(" ");
-        guessesLeft.textContent = ("Guesses Left: " + guessesTotal--);
-        // don't count letters that have already been pressed
-        if (guessesTotal <= 0) {
-            // stop game and restart
+    if ((guess.length == 1) && (regex.test(guess))) {
+        while (wordArray.indexOf(guess) != -1) {
+            rightLetter.push(guess);
+            answerArray[wordArray.indexOf(guess)] = guess;
+            wordArray[wordArray.indexOf(guess)] = '';
+            document.getElementById("currentWord").textContent = answerArray.join(' ');
+        }
+        if (rightLetter.length === word.length) {
+            wins++;
+            oldWords = word;
+            gameInit();
+            return
+
+        }
+        if (!word.includes(guess)) {
+            if (!wrongLetter.includes(guess)) {
+                wrongLetter.push(guess);
+                wrongLetters.textContent = wrongLetter.join(" ");
+                guessesTotal--;
+
+                if (guessesTotal <= 0) {
+                    gameInit();
+                    return
+                }
+                document.getElementById("guessesLeft").textContent = guessesTotal;
+            }
+        }
+        if (!word.includes(guess) || rightLetter.length === word.length) {
         }
     }
-    if (!word.includes(guess) || rightLetter.length === word.length) {
-
-    }
-
 }
-
-
-// if (key presssed is equal to a letter in the word) {
-//     update letter tiles
-// } else {
-//     log key pressed into the used letter section;
-// }

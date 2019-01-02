@@ -36,36 +36,52 @@
         </header>
         <div class="jumbotron row bg-white">
             <div class="col-md-6 text-center border" style="height: 400px;">
-                <img src="assets/images/gallows.jpg" alt="Silouhette of the gallows" sytle="width: 50px;">
+                <div class="row">
+                    <div class="col-md-12 text-center m-2">
+                        <img src="assets/images/gallows.jpg" alt="Silouhette of the gallows" sytle="width: 50px;">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 text-center m-2">
+                        <p>
+                            Words of the past:
+                            <span id="oldWords"></span>
+                        </p>
+                    </div>
+                </div>
             </div>
+
             <div class="col-md-6 text-center border" style="height: 400px;">
                 <div class="row">
-                    <div class="col-md-12 text-center">
+                    <div class="col-md-12 text-center m-2">
                         <p>
-                            Press any key to get started!
+                            Press any key to start guessing!
                         </p>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-12 text-center">
-                        <p id="winTotal">
-                            Wins: 0
+                    <div class="col-md-12 text-center m-2">
+                        <p>
+                            Wins: <span id="winTotal">0</span>
                         </p>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-12 text-center" id="currentWord">
+                    <div class="col-md-12 text-center m-2">
                         <p>
                             Current Word:
+                            <br>
+                            <span id="currentWord" class="m-2"></span>
                         </p>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-12 text-center">
-                        <p id="guessesLeft">
-                            Guesses Left: 12
+                    <div class="col-md-12 text-center m-2">
+                        <p>
+                            Guesses Left: <span id="guessesLeft"></span>
                         </p>
-                        <p id="wrongLetters">
+                        <p>
+                            <span id="wrongLetters"></span>
                         </p>
                     </div>
                 </div>
