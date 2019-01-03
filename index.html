@@ -24,25 +24,52 @@
         img {
             width: 200px;
         }
+        #header {
+            font-size: 80px;
+            letter-spacing: 6px;
+        }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <header>
-            <h1 class="text-center text-white">
-                HANGMAN
-            </h1>
+        <header class="text-center text-white m-0">
+            <em>
+                <h1 id="header" class="">
+                    HANGMAN
+                </h1>
+                <h3 class="">
+                    Pirate Version
+                </h3>
+            </em>
         </header>
         <div class="jumbotron row bg-white m-5 p-0">
             <div class="col-md-6 text-center border" style="height: 400px;">
-                <div class="row">
+                <div class="row" id="gallows">
                     <div class="col-md-12 text-center m-2">
                         <img src="assets/images/gallows.jpg" alt="Silouhette of the gallows" sytle="width: 50px;">
                     </div>
                 </div>
+                <div class="row" id="pirateDance">
+                    <div class="col-md-12 text-center m-2">
+                        <img src="https://media.giphy.com/media/39CfeCEk6NoLJVDvyH/giphy.gif" alt="Pirate party dance"
+                            sytle="width: 50px;">
+                    </div>
+                </div>
+                <div class="row" id="pirateHanging">
+                    <div class="col-md-12 text-center m-2">
+                        <img src="https://media.giphy.com/media/Z0bGcavWt7FWU/giphy.gif" alt="Pirate party dance" sytle="width: 50px;">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 text-center m-2">
+                        <button id="playAgain" class="btn btn-outline-dark">
+                            Play Again
+                        </button>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-6 text-center border" style="height: 400px;">
+            <div class="col-md-6 text-center border text-info" style="height: 400px;">
                 <div class="row">
                     <div class="col-md-12 text-center m-2">
                         <p>
@@ -62,9 +89,9 @@
                         </p>
                     </div>
                 </div>
-                <div class="col-md-12 text-center m-2">
+                <div class="col-md-12 text-center m-2 font-weight-bold">
                     <h3>
-                        Current Word:
+                        <u>Current Word:</u>
                         <br>
                         <span id="currentWord" class="m-2"></span>
                     </h3>

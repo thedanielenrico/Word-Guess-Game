@@ -16,6 +16,7 @@ var currentWord = "";
 var usedLetters = "";
 var letterSpaces = "";
 var oldWords = [];
+
 // =================================================================
 // Game initialize
 // =================================================================
@@ -40,6 +41,10 @@ function gameInit() {
     document.getElementById("guessesLeft").textContent = guessesTotal;
     document.getElementById("wrongLetters").textContent = "";
     document.getElementById("oldWords").textContent = oldWords;
+    document.getElementById("pirateDance").style.display = 'none';
+    document.getElementById("pirateHanging").style.display = 'none';
+    document.getElementById("gallows").style.display = 'initial';
+    document.getElementById("playAgain").style.display = "none";
     console.log(word);
 }
 // =================================================================
@@ -59,7 +64,13 @@ document.onkeyup = function (event) {
         if (rightLetter.length === word.length) {
             wins++;
             oldWords = word;
-            gameInit();
+            document.getElementById("pirateDance").style.display = 'initial';
+            document.getElementById("gallows").style.display = 'none';
+            document.getElementById("playAgain").style.display = "initial";
+
+            document.getElementById("playAgain").onclick = function playAgain() {
+                gameInit();
+            }
             return
         }
         if (!word.includes(guess)) {
@@ -70,7 +81,12 @@ document.onkeyup = function (event) {
                 oldWords = word;
                 if (guessesTotal <= 0) {
                     losses++;
-                    gameInit();
+                    document.getElementById("pirateHanging").style.display = 'initial';
+                    document.getElementById("gallows").style.display = 'none';
+                    document.getElementById("playAgain").style.display = "initial";
+                    document.getElementById("playAgain").onclick = function playAgain() {
+                        gameInit();
+                    }
                     return
                 }
                 document.getElementById("guessesLeft").textContent = guessesTotal;
