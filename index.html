@@ -34,23 +34,14 @@
                 HANGMAN
             </h1>
         </header>
-        <div class="jumbotron row bg-white">
+        <div class="jumbotron row bg-white m-5 p-0">
             <div class="col-md-6 text-center border" style="height: 400px;">
                 <div class="row">
                     <div class="col-md-12 text-center m-2">
                         <img src="assets/images/gallows.jpg" alt="Silouhette of the gallows" sytle="width: 50px;">
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-12 text-center m-2">
-                        <p>
-                            Words of the past:
-                            <span id="oldWords"></span>
-                        </p>
-                    </div>
-                </div>
             </div>
-
             <div class="col-md-6 text-center border" style="height: 400px;">
                 <div class="row">
                     <div class="col-md-12 text-center m-2">
@@ -60,20 +51,23 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-12 text-center m-2">
+                    <div class="col-md-6 text-center">
                         <p>
                             Wins: <span id="winTotal">0</span>
                         </p>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12 text-center m-2">
+                    <div class="col-md-6 text-center">
                         <p>
-                            Current Word:
-                            <br>
-                            <span id="currentWord" class="m-2"></span>
+                            Losses: <span id="lossTotal">0</span>
                         </p>
                     </div>
+                </div>
+                <div class="col-md-12 text-center m-2">
+                    <h3>
+                        Current Word:
+                        <br>
+                        <span id="currentWord" class="m-2"></span>
+                    </h3>
                 </div>
                 <div class="row">
                     <div class="col-md-12 text-center m-2">
@@ -85,11 +79,20 @@
                         </p>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-md-12 text-center m-2">
+                        <p>
+                            Last word:
+                            <span id="oldWords"></span>
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-    </div>
+
+
 
 
 
