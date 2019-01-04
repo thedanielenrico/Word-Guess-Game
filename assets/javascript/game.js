@@ -67,7 +67,6 @@ document.onkeyup = function (event) {
             document.getElementById("pirateDance").style.display = 'initial';
             document.getElementById("gallows").style.display = 'none';
             document.getElementById("playAgain").style.display = "initial";
-
             document.getElementById("playAgain").onclick = function playAgain() {
                 gameInit();
             }
