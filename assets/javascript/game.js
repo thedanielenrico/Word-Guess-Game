@@ -36,15 +36,13 @@ function gameInit() {
         answerArray.push("_");
     }
     document.getElementById("currentWord").textContent = answerArray.join(" ");
-    document.getElementById("winTotal").textContent = wins;
-    document.getElementById("lossTotal").textContent = losses;
-    document.getElementById("guessesLeft").textContent = guessesTotal;
     document.getElementById("wrongLetters").textContent = "";
-    document.getElementById("oldWords").textContent = oldWords;
     document.getElementById("pirateDance").style.display = 'none';
+    document.getElementById("guessesLeft").textContent = guessesTotal;
     document.getElementById("pirateHanging").style.display = 'none';
     document.getElementById("gallows").style.display = 'initial';
     document.getElementById("playAgain").style.display = "none";
+    console.log(word);
 }
 // =================================================================
 // Game events
@@ -63,6 +61,8 @@ document.onkeyup = function (event) {
         if (rightLetter.length === word.length) {
             wins++;
             oldWords = word;
+            document.getElementById("winTotal").textContent = wins;
+            document.getElementById("oldWords").textContent = oldWords;
             document.getElementById("pirateDance").style.display = 'initial';
             document.getElementById("gallows").style.display = 'none';
             document.getElementById("playAgain").style.display = "initial";
@@ -79,6 +79,8 @@ document.onkeyup = function (event) {
                 oldWords = word;
                 if (guessesTotal <= 0) {
                     losses++;
+                    document.getElementById("lossTotal").textContent = losses;
+                    document.getElementById("oldWords").textContent = oldWords;
                     document.getElementById("pirateHanging").style.display = 'initial';
                     document.getElementById("gallows").style.display = 'none';
                     document.getElementById("playAgain").style.display = "initial";
