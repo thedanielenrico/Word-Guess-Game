@@ -45,7 +45,6 @@ function gameInit() {
     document.getElementById("pirateHanging").style.display = 'none';
     document.getElementById("gallows").style.display = 'initial';
     document.getElementById("playAgain").style.display = "none";
-    console.log(word);
 }
 // =================================================================
 // Game events
