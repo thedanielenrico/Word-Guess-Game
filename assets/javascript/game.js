@@ -16,6 +16,7 @@ var currentWord = "";
 var usedLetters = "";
 var letterSpaces = "";
 var oldWords = [];
+var gameOver = false;
 
 // =================================================================
 // Game initialize
@@ -50,7 +51,9 @@ function gameInit() {
 document.body.onload = gameInit();
 document.onkeyup = function (event) {
     var guess = event.key;
-
+    if (gameOver) {
+        return
+    }
     if ((guess.length == 1) && (regex.test(guess))) {
         while (wordArray.indexOf(guess) != -1) {
             rightLetter.push(guess);
@@ -68,8 +71,11 @@ document.onkeyup = function (event) {
             document.getElementById("playAgain").style.display = "initial";
             document.getElementById("playAgain").onclick = function playAgain() {
                 gameInit();
+                gameOver = false;
+
             }
-            return
+            gameOver = true;
+            // return
         }
         if (!word.includes(guess)) {
             if (!wrongLetter.includes(guess)) {
@@ -86,8 +92,11 @@ document.onkeyup = function (event) {
                     document.getElementById("playAgain").style.display = "initial";
                     document.getElementById("playAgain").onclick = function playAgain() {
                         gameInit();
+                        gameOver = false;
                     }
-                    return
+                    // return
+            gameOver = true;
+
                 }
                 document.getElementById("guessesLeft").textContent = guessesTotal;
             }
