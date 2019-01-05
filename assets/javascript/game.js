@@ -43,7 +43,6 @@ function gameInit() {
     document.getElementById("pirateHanging").style.display = 'none';
     document.getElementById("gallows").style.display = 'initial';
     document.getElementById("playAgain").style.display = "none";
-    console.log(word);
 }
 // =================================================================
 // Game events
@@ -75,7 +74,6 @@ document.onkeyup = function (event) {
 
             }
             gameOver = true;
-            // return
         }
         if (!word.includes(guess)) {
             if (!wrongLetter.includes(guess)) {
@@ -94,7 +92,6 @@ document.onkeyup = function (event) {
                         gameInit();
                         gameOver = false;
                     }
-                    // return
             gameOver = true;
 
                 }
