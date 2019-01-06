@@ -1,7 +1,7 @@
 // =================================================================
 // Global variables
 // =================================================================
-var wordList = ['ocean', 'pirate', "beach", "parrot", "ship", "curse", "treasure", "map", "hook", "aye", "boom", "naval", "captain", "mate", "dolphin", "nautical", "arg", "atlantic", "pacific", "caribbean", "island", "cannon", "sword", "deck"];
+var wordList = ['ocean', 'pirate', "beach", "parrot", "ship", "curse", "treasure", "map", "hook", "aye", "boom", "naval", "captain", "mate", "dolphin", "nautical", "arg", "atlantic", "pacific", "caribbean", "island", "cannon", "sword", "deck", "seahorse", "knot", "noose", "horse", "sail", "flag", "kraken", "monkey", "rum", "compass", "mermaid", "musket", "officer", "dock", "buccaneer", "clipper", "coffer", "cutlass", "fathom", "galley", "plank", "port", "starboard", "loot", "lookout", "maroon", "mutiny", "plunder", "scallywag", "seadog", "telescope", "spyglass", ];
 var word = wordList[Math.floor(Math.random() * wordList.length)];
 var wordArray = "";
 var rightLetter = [];
